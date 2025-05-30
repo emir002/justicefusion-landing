@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="bs">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JusticeFusion</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="images/justicefusion_logo.png" alt="JusticeFusion logo" class="logo-img">
+                JusticeFusion
+            </a>
+            <div class="nav-icons">
+                <span id="lang-bs" class="flag active">🇧🇦</span>
+                <span id="lang-en" class="flag">ENG</span>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#architecture-start" data-lang="navArchitecture-start">Arhitektura JusticeFusion</a></li>
+                <li><a href="whitepaper.html" data-lang="navWhitepaper">Whitepaper</a></li>
+                <li><a href="#contact" data-lang="navContactHome">Kontakt</a></li>
+                <li><a href="prednosti.html" data-lang="navAdvantages">Prednosti u odnosu na ChatGPT</a></li>
+                <li><a href="https://justicefusion.cc" target="_blank" class="access-link" data-lang="navAccess">Pristup asistentu</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="whitepaper" class="container">
+            <h2 data-lang="whitepaperTitle">JusticeFusion – Tech Whitepaper</h2>
+            <p data-lang="wpIntro">JusticeFusion je modularni AI pravni asistent baziran na Retrieval-Augmented Generation (RAG) arhitekturi i naprednoj upotrebi domaćih pravnih podataka...</p>
+            <h3 data-lang="wp1Title">1. Pregled sistema i arhitektura</h3>
+            <p data-lang="wp1Text1">JusticeFusion je modularni AI pravni asistent baziran na Retrieval-Augmented Generation (RAG) arhitekturi i naprednoj upotrebi domaćih pravnih podataka. Sistem je izgrađen od više specijaliziranih modula, razvijenih u Pythonu, koji međusobno komuniciraju kroz jasne API-je i zajedničku bazu podataka.</p>
+            <p data-lang="wp1Text2">Može se koristiti kao SaaS (cloud), privatni cloud, ili potpuno lokalno (on-premise), zavisno od zahtjeva korisnika.</p>
+            <p data-lang="wp1Text3">Glavne komponente:</p>
+            <ul>
+                <li data-lang="wp1Li1">RAG jezgrovni modul (Retrieval + Generation): Povezuje obradu dokumenata i generisanje odgovora.</li>
+                <li data-lang="wp1Li2">Pravni embedding model (SentenceTransformer, cde-small-v2): Trenirano na zakonima i sudskim presudama sa prostora BiH, HR, SR.</li>
+                <li data-lang="wp1Li3">Hybrid retrieval engine: Kombinira vektorsko pretraživanje (FAISS), pretragu ključnih riječi (TF-IDF, BM25) i BM25-score weighting.</li>
+                <li data-lang="wp1Li4">Dokument procesor: Ekstrakcija i obrada teksta iz PDF, DOCX, slika (sa naprednim OCR-om).</li>
+                <li data-lang="wp1Li5">Agentic evaluator: Dvoslojna evaluacija odgovora (prvi model odgovara, drugi provjerava i daje “chain-of-thought” poboljšanja).</li>
+                <li data-lang="wp1Li6">Lokalna pravna baza: Zakoni, propisi, presude – može se proširivati vlastitim ili eksternim dokumentima.</li>
+                <li data-lang="wp1Li7">Web UI/administracija: Intuitivni Streamlit-based interfejs prilagođen advokatima i firmama.</li>
+            </ul>
+            <h3 data-lang="wp2Title">2. Podrška za raznovrsne ulazne formate i napredna obrada teksta</h3>
+                <ul >
+                    <li data-lang="wp2Li1">Podržani formati: PDF, DOCX, tekstualni fajlovi, slike (JPG, PNG, TIFF).</li>
+                    <li data-lang="wp2Li2">Automatski OCR: EasyOCR + Tesseract, sa automatskom detekcijom jezika i pisma (ćirilica/latinica).</li>
+                    <li data-lang="wp2Li3">Prepoznavanje praznih stranica, header/footer šuma, automatska lematizacija (Stanza + NLTK).</li>
+                    <li data-lang="wp2Li4">Chunking dokumenta: Svaki dokument se automatski dijeli u logične cjeline (paragrafi/članci), što omogućava granularno pretraživanje i tačno vraćanje relevantnih odgovora.</li>
+                </ul>
+                <h3 data-lang="wp3Title">3. Legalni embedding i vektorsko pretraživanje</h3>
+                <ul>
+                    <li data-lang="wp3Li1">Embedding model (SentenceTransformer): Prilagođen za pravnu terminologiju i lokalne jezike. Omogućava efikasnu i preciznu semantičku sličnost između korisničkog pitanja i relevantnih dijelova dokumenata.</li>
+                    <li data-lang="wp3Li2">FAISS indeksacija: Visokoperformantno vektorsko pretraživanje, spremno za baze sa hiljadama ili desetinama hiljada dokumenata.</li>
+                    <li data-lang="wp3Li3">Caching mehanizmi: Embeddingi se keširaju za brze upite i minimiziranje računalnih troškova.</li>
+                </ul>
+                <h3 data-lang="wp4Title">4. Hibridno pretraživanje (vector + keyword + BM25 scoring)</h3>
+                <ul>
+                    <li data-lang="wp4Li1">Vektorska pretraga: Na osnovu semantičke sličnosti (najbliži embeddingi).</li>
+                    <li data-lang="wp4Li2">Pretraga po ključnim riječima: TF-IDF i BM25 algoritmi za “traditional IR” kontekst.</li>
+                    <li data-lang="wp4Li3">Kombinovano bodovanje: Sistem dinamički određuje težinu svakog izvora (vektor, ključne riječi, BM25), prilagođavajući se tipu upita i korisničkoj bazi.</li>
+                    <li data-lang="wp4Li4">RAG pipeline: Najrelevantniji segmenti iz dokumenata automatski se šalju u LLM prompt za generisanje konačnog odgovora.</li>
+                </ul>
+                <h3 data-lang="wp5Title">5. Agentic evaluacija odgovora (multi-step chain-of-thought)</h3>
+                <p data-lang="wp5Text1">Nakon što LLM generiše prvi odgovor, drugi agent (agentic LLM) automatski analizira:</p>
+                <ul>
+                    <li data-lang="wp5Li1">Da li su navedeni svi relevantni zakoni, članovi, presude i pravni entiteti?</li>
+                    <li data-lang="wp5Li2">Da li je odgovor potpun, precizan i razumljiv?</li>
+                </ul>
+                <p data-lang="wp5Text2">Ako odgovor nije zadovoljavajući, agent generiše novo (poboljšano) pitanje i vraća ga u RAG pipeline — do tri iteracije po odgovoru (“iterativni chain-of-thought”).</p>
+                <p data-lang="wp5Text3">Prednosti: Minimizacija “halucinacija”, povećana tačnost i pravna pouzdanost, manje potrebe za ljudskim “double-checking”.</p>
+                <h3 data-lang="wp6Title">6. Automatska detekcija pravnih obrazaca i DOCX generator</h3>
+                <ul>
+                    <li data-lang="wp6Li1">Analiza strukture odgovora — model automatski prepoznaje da li se traži izrada formalnog dokumenta (žalba, ugovor, rješenje, dopis…).</li>
+                    <li data-lang="wp6Li2">Automatski Word (DOCX) generator: Iz teksta se kreira dokument spreman za print ili dalje uređivanje, sa mogućnošću unosa vlastitih podataka.</li>
+                </ul>
+                <h3 data-lang="wp7Title">7. Prava privatnost i deployment opcije</h3>
+                <ul>
+                    <li data-lang="wp7Li1">On-premise ili cloud: JusticeFusion se može instalirati na lokalni server, u privatni cloud, ili koristiti kao SaaS uz “data residency” garanciju.</li>
+                    <li data-lang="wp7Li2">Offline režim: Potpuno funkcionalan i bez internetske konekcije — nijedan podatak, dokument, upit ili odgovor ne napušta korisničku mrežu.</li>
+                    <li data-lang="wp7Li3">Prava “private knowledge base” arhitektura: Možete izgraditi i koristiti AI koji poznaje isključivo vašu internu bazu dokumenata — izuzetno pogodno za osjetljive firme, institucije, pravne timove ili notare.</li>
+                </ul>
+                <h3 data-lang="wp8Title">8. Ažuriranje i održavanje baze</h3>
+                <ul>
+                    <li data-lang="wp8Li1">Dodavanje novih dokumenata: Jednostavan upload, automatsko procesiranje i indeksiranje — nema potrebe za ručnim unosom, ponovnim treniranjem ili naprednim IT znanjem.</li>
+                    <li data-lang="wp8Li2">Praćenje izmjena zakona: Nova pravila i akti automatski postaju dio baze čim ih dodate.</li>
+                    <li data-lang="wp8Li3">Podrška za “dataset versioning”: Svaka izmjena baze može biti verzionisana, omogućavajući povratak na starije verzije po potrebi.</li>
+                </ul>
+                <h3 data-lang="wp9Title">9. Sigurnost i auditi</h3>
+                <ul>
+                    <li data-lang="wp9Li1">Lokalna pohrana podataka: Svi dokumenti, embeddingi i historija upita su na vašim serverima, s mogućnošću šifriranja diska/baze.</li>
+                    <li data-lang="wp9Li2">Audit logovi: Svi korisnički pristupi, promjene dokumenata i zahtjevi mogu biti auditirani.</li>
+                    <li data-lang="wp9Li3">GDPR i lokalna pravila privatnosti: JusticeFusion može biti konfigurisan da u potpunosti poštuje propise zemlje korisnika.</li>
+                </ul>
+                <h3 data-lang="wp10Title">10. Korisnički interfejs, administracija i integracije</h3>
+                <ul>
+                    <li data-lang="wp10Li1">Web UI (Streamlit based): Intuitivan chat interfejs za svakog pravnika; podržava rad s više razgovora, povijest, izvoz, administraciju korisnika i napredne pretrage.</li>
+                    <li data-lang="wp10Li2">Višejezičnost: Bosanski, hrvatski i srpski – automatsko prepoznavanje i prikaz odgovora na željenom jeziku.</li>
+                    <li data-lang="wp10Li3">Role-based access control (RBAC): Administratorske i korisničke uloge, mogućnost definiranja različitih nivoa pristupa.</li>
+                    <li data-lang="wp10Li4">REST API i webhook integracije: Mogućnost integracije s postojećim DMS, ERP ili CRM rješenjima.</li>
+                </ul>
+                <h3 data-lang="wp11Title">11. Ekosistem i proširivost</h3>
+                <ul>
+                    <li data-lang="wp11Li1">Plug-and-play ekstenzije: Lako dodavanje novih funkcionalnosti, parsera, dodatnih pravnih baza ili novih jezičkih modela.</li>
+                    <li data-lang="wp11Li2">Custom workflow: Moguće je napraviti vlastite tokove rada (npr. priprema sudske strategije, automatizacija tipskih obrazaca…).</li>
+                    <li data-lang="wp11Li3">Eksterni izvori: Integracija s drugim izvorima prava (open data, sudske baze, internacionalni propisi).</li>
+                </ul>
+                <h3 data-lang="wp12Title">12. Tehnologije i biblioteke</h3>
+                <ul>
+                    <li data-lang="wp12Li1">Backend: Python 3.x, Streamlit, FAISS, PyTorch, SentenceTransformers, Stanza, NLTK, EasyOCR, Docx, PDFMiner, OpenCV, SQLite/LMDB za keširanje.</li>
+                    <li data-lang="wp12Li2">Frontend: Streamlit-based responsive UI + custom CSS/JS injekcije za mobile i desktop.</li>
+                    <li data-lang="wp12Li3">API: RESTful za administraciju i integraciju, mogućnost webhookova.</li>
+                </ul>
+                <h3 data-lang="wp13Title">13. Roadmap i podrška</h3>
+                <ul>
+                    <li data-lang="wp13Li1">Aktivno se razvija i podržava.</li>
+                    <li data-lang="wp13Li2">Mogućnost prilagodbe na specifične procese klijenta.</li>
+                    <li data-lang="wp13Li3">Brza podrška, custom onboarding, training za krajnje korisnike i IT osoblje.</li>
+                </ul>
+        </section>
+
+        <section id="contact" class="container">
+            <h2 data-lang="contactTitle">Kontaktirajte nas</h2>
+            <form id="contact-form" action="https://formsubmit.co/justicefusion@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Upit sa JusticeFusion Whitepaper stranice">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Vaše ime i prezime" required data-lang="contactNamePlaceholder">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Vaš email" required data-lang="contactEmailPlaceholder">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="4" placeholder="Vaša poruka" required data-lang="contactMessagePlaceholder"></textarea>
+                </div>
+                <button type="submit" class="btn" data-lang="contactSendButton">Pošalji poruku</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <img src="images/graphlab_logo.png" alt="GraphLab logo" class="footer-logo"> <p data-lang="footerText">© 2025 GraphLab. Sva prava zadržana.</p> </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
