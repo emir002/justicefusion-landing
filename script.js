@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bulletP5:                  "⚖️ Pretražujte zakone, podzakonske akte, sudsku praksu i presude koristeći prirodni jezik!",
             bulletP6:                  "❓ Postavljajte pitanja za autentično tumačenje zakona i podzakonskih akata zasnovano na uvjek aktuelnoj ogromnoj bazi podataka!",
             bulletP7:                  "🗂 Svi Vaši dokumenti na jednom mjestu!",
-            bulletP8:                  "🕺 Uživajte u slobodnom vrijeme!",
+            bulletP8:                  "🕺 Uživajte u slobodnom vremenu!",
             btnAccessWhy:              "Pristup asistentu",
 
             // Contact
