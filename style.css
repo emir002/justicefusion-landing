@@ -569,3 +569,21 @@ footer p {
     margin: 2rem auto 1rem;
     opacity: 0.9;         /* malo jača vidljivost */
 }
+
+/* ================================================================== */
+/*  Puna (90 %) širina sekcije “Arhitektura JusticeFusion”            */
+/* ================================================================== */
+#architecture-start.architecture-column-start{
+    /* Izlazi iz “dva-stupca”: */
+    flex: 0 0 100%;          /* uzmi cijeli red unutar flex-wrappera   */
+    width: 100%;             /* 100 % unutar .container = 90 % body-a */
+    
+    /* Poravnanje teksta i padding */
+    padding: 2rem 0;         /* samo vertikalni razmak, bez left/right */
+}
+
+/* Ako koristiš .architecture-full-width dalje u nastavku, neka isto bude 100 % */
+.architecture-full-width{
+    width: 100%;
+    padding: 2rem 0;         /* jednako kao gore radi konzistentnosti */
+}
