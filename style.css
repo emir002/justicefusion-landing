@@ -198,12 +198,6 @@ nav.container {
     width: 100%; /* Ensure it spans the container width */
 }
 
-/* Task 3: Rename GraphForge to GraphLab - Logo sizing */
-.small-logo { /* Used in "Prednosti..." section on index.html */
-    height: 70px; /* Increased logo size */
-    margin-bottom: 1rem;
-    opacity: 0.8;
-}
 
 .footer-logo { /* Used in the footer */
     height: 60px; /* Increased logo size */
@@ -331,10 +325,9 @@ section h2, .section-title-linkable a { /* For clickable section titles */
     min-width: 300px; /* Minimum width before wrapping */
 }
 
-.architecture-column-start {
-    flex: 1.5;
-    min-width: 300px;
-    padding: 4rem;
+.architecture-column-start{
+    flex: 1 1 100%;
+    padding: 2rem 0;
 }
 .architecture-column-start h2 {
     text-align: left;
@@ -424,11 +417,6 @@ section#prednosti-chatgpt-section h2 {
 }
 
 
-.small-logo { /* For GraphLab logo */
-    height: 70px;
-    margin-bottom: 1rem;
-    opacity: 0.8;
-}
 
 
 /* For the new Prednosti page content */
@@ -571,4 +559,13 @@ footer p {
     #bullet h1 {
         font-size: 2rem;
     }
+}
+
+/* ===== GraphLab logo unutar sekcije Prednosti ===== */
+#prednosti-chatgpt-section .small-logo{
+    height: 120px;        /* ⇽ promijeni po želji */
+    width: auto;
+    display: block;
+    margin: 2rem auto 1rem;
+    opacity: 0.9;         /* malo jača vidljivost */
 }
