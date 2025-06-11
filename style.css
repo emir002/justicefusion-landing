@@ -117,10 +117,9 @@ nav.container {
 }
 
 #lang-en {
-    font-size: 0.80rem; /* Fine-tuned for visual balance with emoji */
-    font-weight: 600;
+    font-size: 1.0rem;
     position: relative;
-    top: -8.50px; /* Minor adjustment for vertical centering */
+    top: -10px;
 }
 
 #lang-bs {
