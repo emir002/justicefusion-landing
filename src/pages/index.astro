@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="JusticeFusion">
+  <main class="space-y-16 pb-16">
+    <section id="hero" class="container flex flex-col gap-12 py-16 md:flex-row md:items-center">
+      <div class="hero-content flex-1 space-y-6">
+        <h1 class="text-4xl font-semibold tracking-tight" data-lang="heroTitle">Šta je JusticeFusion?</h1>
+        <p class="text-lg text-[var(--muted)]" data-lang="heroText">JusticeFusion je vaš pravni AI asistent nove generacije, kreiran posebno za advokate, pravne stručnjake, ekonomiste, administrativne radnike, firme i sve kojima je potrebna pouzdana, brza i tačna pravna informacija. JusticeFusion razumije domaće pravo, radi s vašim dokumentima i štedi vaše vrijeme — sve uz najjednostavnije korisničko iskustvo.</p>
+        <a href="https://justicefusion.cc" target="_blank" class="btn" data-lang="btnAccess1">Pristup asistentu</a>
+      </div>
+      <div class="hero-image flex-1">
+        <img src="/images/hero-placeholder.png" alt="Hero placeholder: Profesionalna ilustracija AI pravnog asistenta">
+      </div>
+    </section>
+
+    <section id="bullet" class="container space-y-4 py-4">
+      <div class="hero-content">
+        <h1 class="text-center text-3xl font-semibold" data-lang="bulletTitle">Zašto JusticeFusion?</h1>
+        <div class="mt-6 space-y-2 text-lg text-[var(--muted)]">
+          <p data-lang="bulletP1">🤖 Automatizuje dosadne poslove!</p>
+          <p data-lang="bulletP2">📋 Kreirajte rješenja, odluke, mailove, zahtjeve, dopise, fakture i sl. sa jednom rečenicom!</p>
+          <p data-lang="bulletP3">🔍 Pretražujte informacije u dokumentima od nekoliko stotina strana koristeći prirodni jezik!</p>
+          <p data-lang="bulletP4">🏛 Uskladite sve Vaše dokumente sa aktuelnim pravnim propisima i zakonima automatski!</p>
+          <p data-lang="bulletP5">⚖️ Pretražujte zakone, podzakonske akte, sudsku praksu i presude koristeći prirodni jezik!</p>
+          <p data-lang="bulletP6">❓ Postavljajte pitanja za autentično tumačenje zakona i podzakonskih akata zasnovano na uvjek aktuelnoj ogromnoj bazi podataka!</p>
+          <p data-lang="bulletP7">🗂 Svi Vaši dokumenti na jednom mjestu!</p>
+          <p data-lang="bulletP8">🕺 Uživajte u slobodnom vremenu!</p>
+        </div>
+        <a href="https://justicefusion.cc" target="_blank" class="btn mt-6" data-lang="btnAccessWhy">Pristup asistentu</a>
+      </div>
+    </section>
+    <div class="container py-1">
+      <hr class="red-separator">
+    </div>
+    <section id="contact" class="container contact-column contact-form-section">
+      <h2 class="text-3xl font-semibold" data-lang="contactTitle">Kontaktirajte nas</h2>
+      <form id="contact-form" action="https://formsubmit.co/justicefusion@gmail.com" method="POST" class="mt-6 space-y-4">
+        <input type="hidden" name="_subject" value="Upit sa JusticeFusion landing stranice">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Vaše ime i prezime" required data-lang="contactNamePlaceholder">
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Vaš email" required data-lang="contactEmailPlaceholder">
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="4" placeholder="Vaša poruka" required data-lang="contactMessagePlaceholder"></textarea>
+        </div>
+        <button type="submit" class="btn w-full" data-lang="contactSendButton">Pošalji poruku</button>
+      </form>
+      <div class="video-wrapper mt-6">
+        <iframe src="https://www.youtube.com/embed/8Ykhc2iXFho" title="JusticeFusion demo video" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <div class="container">
+      <section id="architecture-start" class="architecture-column-start space-y-5 py-12">
+        <h2 class="text-3xl font-semibold" data-lang="architectureTitle">Arhitektura JusticeFusion</h2>
+        <p><strong data-lang="archSub1">Prava pravna ekspertiza kroz specijalizovani model</strong><br>
+          <span data-lang="archText1">JusticeFusion pokreće vlastiti duboko trenirani jezički model, razvijen na preko 1000 zakona i 19.000 sudskih presuda iz Bosne i Hercegovine, Hrvatske i Srbije. Umjesto oslanjanja na generički, globalni ili nerelevantni podatkovni skup, naš model koristi “fine-tuning” i legalne korpuse s domaćeg terena. Rezultat je nevjerovatno precizna identifikacija, razumijevanje i generisanje odgovora za sve što se tiče domaćeg prava — i to na oba pisma, ćirilici i latinici.</span>
+        </p>
+        <p><strong data-lang="archSub2">Prava snaga RAG-a: Prava obrada korisničkih dokumenata</strong><br>
+          <span data-lang="archText2">Za razliku od većine AI rješenja, JusticeFusion koristi naprednu Retrieval-Augmented Generation (RAG) arhitekturu koja omogućava korisnicima da učitaju vlastite dokumente (PDF, DOCX, slike). Svi dokumenti se procesuiraju kroz više slojeva ekstrakcije teksta, automatski se indeksiraju i trenutačno su dostupni za pretraživanje. To znači da korisnik može postaviti pitanje doslovno o bilo čemu iz vlastitih materijala i odmah dobiti odgovor — uz podršku za razne formate, automatski OCR za skenirane fajlove i robustno prepoznavanje jezika.</span>
+        </p>
+        <p><strong data-lang="archSub3">Hibridni retrieval: Kombinacija vaših dokumenata i pravne baze</strong><br>
+          <span data-lang="archText3">JusticeFusion kombinira hibridni retrieval engine: vaši dokumenti uvijek imaju prioritet, ali ako u njima nema odgovora, sistem koristi internu pravnu bazu (zakoni, propisi, presude). Time se automatski ostvaruje dvostruka provjera — sistem povlači podatke iz vaših izvora, ali i iz najšire moguće baze lokalnih pravnih akata, dajući vam “best of both worlds” bez kompromisa.</span>
+        </p>
+        <p><strong data-lang="archSub4">Automatska analiza upita i adaptivna strategija odgovaranja</strong><br>
+          <span data-lang="archText4">Svaki korisnički upit prolazi kroz napredni intent detection koji automatski prepoznaje da li tražite opštu analizu (npr. sažetak, ključne tačke) ili konkretan pravni podatak. Na osnovu toga biraju se optimizirane strategije pretraživanja i generisanja odgovora — sve u pozadini, bez potrebe za tehničkim znanjem od strane korisnika.</span>
+        </p>
+        <p><strong data-lang="archSub5">Višeslojna provjera i agentic “chain-of-thought” rafiniranje</strong><br>
+          <span data-lang="archText5">JusticeFusion uvodi dvoslojni sistem LLM evaluacije: nakon što model generiše prvi odgovor, poseban agentic model automatski provjerava njegovu potpunost i tačnost. Ako procijeni da odgovor nije dovoljno jasan ili kompletan, pokreće se proces automatskog reformulisanja pitanja i poboljšanja odgovora — ovaj “chain-of-thought” pristup donosi višestruko bolju pravnu pouzdanost.</span>
+        </p>
+        <p><strong data-lang="archSub6">Automatska detekcija i generisanje pravnih obrazaca</strong><br>
+          <span data-lang="archText6">Sistem koristi detekciju predložaka: ako AI prepozna da korisničko pitanje zahtijeva pravni obrazac (npr. žalba, ugovor, rješenje), automatski generiše pravno validan Word (DOCX) dokument. Korisnik ga može preuzeti i koristiti bez dodatnog editovanja — ova funkcionalnost ne postoji u konkurentskim generičkim rješenjima.</span>
+        </p>
+        <p><strong data-lang="archSub7">Sigurnost, privatnost i on-premise rad</strong><br>
+          <span data-lang="archText7">Za razliku od velikih globalnih servisa (ChatGPT, Gemini, DeepSeek), JusticeFusion se može instalirati lokalno ili u vašem cloudu. Vaši dokumenti, pitanja i podaci nikada ne napuštaju vašu infrastrukturu. Sistem nudi punu kontrolu nad privatnošću i može raditi bez internetske konekcije, što ga čini idealnim za advokatske kancelarije, firme i javni sektor.</span>
+        </p>
+        <p><strong data-lang="archSub8">Moderno korisničko sučelje dizajnirano za pravnu struku</strong><br>
+          <span data-lang="archText8">UI je iz temelja napravljen za pravnike i firme — omogućava upravljanje s više paralelnih razgovora, arhivu svih pitanja i odgovora, administraciju korisnika, izvoz odgovora, te rad na bosanskom, hrvatskom i srpskom jeziku. Sve je optimizovano za brzinu i jednostavnost, bez tehničkih prepreka.</span>
+        </p>
+        <p><strong data-lang="archSub9">Ažuriranje i proširenje baze bez ponovnog treniranja</strong><br>
+          <span data-lang="archText9">Sistem je dizajniran tako da nova pravila, zakoni i presude možete dodati jednostavnim uploadom dokumenata — JusticeFusion ih automatski indeksira i koristi u sljedećim upitima, bez potrebe za ručnim intervencijama ili skupim treninzima modela.</span>
+        </p>
+        <p><strong data-lang="archSub10">Napredni algoritmi za obradu domaćih izvora</strong><br>
+          <span data-lang="archText10">Integrirani su specijalni algoritmi za automatsko prepoznavanje jezika, lematizaciju, konverziju ćirilice/latinice, čišćenje zaglavlja i podnožja, pa su svi pravni tekstovi analizirani sa maksimalnom tačnošću — bez šuma i gubitka bitnih informacija.</span>
+        </p>
+        <p><strong data-lang="archSub11">Vaša vlastita baza, vaša pravila – privatna offline verzija</strong><br>
+          <span data-lang="archText11">Imate svoju veliku arhivu ugovora, presuda, rješenja, interne akte ili druge pravne dokumente? JusticeFusion nudi mogućnost uspostavljanja potpuno lokalne, offline verzije AI asistenta, koja radi isključivo s vašom bazom podataka.</span><br>
+          <span data-lang="archText12">U toj verziji, svi podaci ostaju isključivo na vašem serveru – nijedan dokument, upit ili odgovor ne izlazi van vašeg okruženja, niti je potrebna bilo kakva internet konekcija. AI asistent pretražuje, analizira i daje odgovore samo na osnovu dokumenata koje vi odaberete i učitate.</span><br>
+          <span data-lang="archText13">Ova opcija je idealna za firme, advokatske kancelarije, notarske urede i institucije koje žele potpunu kontrolu nad znanjem, sigurnošću i povjerljivošću, ali i dalje koristiti sve prednosti najnaprednije AI pravne tehnologije.</span>
+        </p>
+        <p><strong data-lang="archEnd">JusticeFusion — AI arhitektura osmišljena za pravnike, izgrađena na najmodernijim principima, ali uvijek pod vašom kontrolom.</strong></p>
+      </section>
+    </div>
+
+    <section id="prednosti-chatgpt-section" class="container text-center">
+      <h2><a href="prednosti.html" class="section-title-button" data-lang="advantagesCompareTitle">Prednosti u odnosu na ChatGPT</a></h2>
+      <p class="mt-4 text-lg text-[var(--muted)]" data-lang="advantagesTeaser">Saznajte zašto je JusticeFusion superiorno rješenje za pravne profesionalce u odnosu na generičke AI alate.</p>
+      <hr class="red-separator">
+      <img src="/images/graphlab_logo.png" alt="GraphLab logo" class="small-logo">
+      <p data-lang="developedByGraphLab">Razvijeno od strane GraphLab © 2025</p>
+    </section>
+  </main>
+</BaseLayout>
