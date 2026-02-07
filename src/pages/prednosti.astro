@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="JusticeFusion">
+  <main class="space-y-16 pb-16">
+    <section id="prednosti-content" class="container space-y-6 py-16">
+      <h2 class="text-3xl font-semibold" data-lang="pageTitleAdvantages">Prednosti JusticeFusion u odnosu na Generičke AI Alate</h2>
+
+      <h3 class="text-2xl font-semibold text-[var(--accent)]" data-lang="advGenericTitle">ChatGPT, Gemini, DeepSeek (Generički AI asistenti):</h3>
+      <h4 class="text-xl font-semibold" data-lang="advGenericProsTitle">Prednosti:</h4>
+      <p class="text-lg text-[var(--muted)]" data-lang="advGenericProsText">Ove platforme posjeduju ogroman fond općeg znanja iz najrazličitijih oblasti, brzo prepoznaju osnovne upite i mogu generirati tekstove na mnogo jezika. Idealne su za brze odgovore na pitanja opće kulture, iz IT-a, nauke ili svakodnevnog života, gdje nije bitna lokalna pravna specifičnost.</p>
+
+      <h4 class="text-xl font-semibold" data-lang="advGenericConsTitle">Nedostaci:</h4>
+      <ul class="list-disc space-y-2 pl-6 text-[var(--muted)]">
+        <li data-lang="advGenericCon1"><strong>Nedostatak lokalne pravne ekspertize:</strong> Nemaju pristup najnovijim verzijama lokalnih zakona, propisa i sudske prakse Bosne i Hercegovine, Hrvatske ili Srbije.</li>
+        <li data-lang="advGenericCon2"><strong>Ne rade efikasno s korisničkim dokumentima:</strong> Većina generičkih AI servisa ne omogućava pretragu, analizu i citiranje konkretnih korisničkih dokumenata (PDF, DOCX, slike) ili su te opcije ograničene i nesigurne.</li>
+        <li data-lang="advGenericCon3"><strong>Nema privatnosti ni kontrole nad podacima:</strong> Sve što pošaljete, obrađuje se na eksternim serverima (SAD, EU, Kina), često bez jasnih garancija privatnosti i sigurnosti vaših dokumenata i povjerljivih podataka.</li>
+        <li data-lang="advGenericCon4"><strong>Bez pravnog fokusa:</strong> Ne prepoznaju pravne forme, ne razumiju niance pravnog jezika, ne mogu generirati pravno validne akte, obrasce, zahtjeve ili ugovore specifične za naše zakonodavstvo.</li>
+        <li data-lang="advGenericCon5"><strong>Nedostaje end-to-end workflow:</strong> Ne mogu preuzeti kompletan pravni slučaj od učitavanja dokumenata, preko analize, do automatskog generisanja obrazaca ili rješenja.</li>
+        <li data-lang="advGenericCon6"><strong>Visoki troškovi:</strong> Komercijalna upotreba (posebno API integracije) je često vrlo skupa i s limitima na broj upita, što nije isplativo za veće pravne timove ili firme.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold text-[var(--accent)]" data-lang="advJusticeFusionTitle">JusticeFusion:</h3>
+      <h4 class="text-xl font-semibold" data-lang="advJusticeFusionProsTitle">Prednosti:</h4>
+      <ul class="list-disc space-y-2 pl-6 text-[var(--muted)]">
+        <li data-lang="advJusticeFusionPro1"><strong>Specijalizovan za domaće pravo:</strong> Trenirano na hiljadama zakona i presuda iz BiH, Hrvatske i Srbije — garantuje tačnost, relevantnost i pravni jezik u odgovorima.</li>
+        <li data-lang="advJusticeFusionPro2"><strong>Rad s vašim dokumentima:</strong> Automatski obrađuje, indeksira i pretražuje vaše PDF-ove, Word fajlove i skenirane slike. Možete postavljati pitanja direktno o svom ugovoru, rješenju ili presudi.</li>
+        <li data-lang="advJusticeFusionPro3"><strong>Hibridni pristup:</strong> Kombinuje znanje iz vaše baze i sistemske baze zakona/presuda, tako da uvijek daje najpotpuniji odgovor — čak i na kompleksne pravne upite.</li>
+        <li data-lang="advJusticeFusionPro4"><strong>Napredna provjera odgovora:</strong> Svaki odgovor prolazi automatsku pravnu provjeru (“agentic evaluation”) koja osigurava tačnost, potpunost i usklađenost sa zakonima.</li>
+        <li data-lang="advJusticeFusionPro5"><strong>Generisanje pravnih obrazaca i dokumenata:</strong> JusticeFusion automatski prepoznaje kada je potreban formalni akt (žalba, ugovor, zahtjev, izjava…) i odmah nudi izvoz u Word (DOCX) formatu, spreman za predaju ili print.</li>
+        <li data-lang="advJusticeFusionPro6"><strong>Privatnost i sigurnost:</strong> Radi na vašoj infrastrukturi (on-premise ili privatni cloud), bez slanja podataka van vaše mreže. Svi podaci, dokumenti i odgovori ostaju pod vašom punom kontrolom.</li>
+        <li data-lang="advJusticeFusionPro7"><strong>Brzo ažuriranje pravne baze:</strong> Novi zakoni, propisi i interni dokumenti se mogu dodavati jednostavno i automatski, bez potrebe za dugim IT intervencijama ili skupim treninzima modela.</li>
+        <li data-lang="advJusticeFusionPro8"><strong>Prilagođeno pravnim profesionalcima:</strong> Sve je prilagođeno svakodnevnom workflow-u advokata, notara, firmi i institucija — od korisničkog interfejsa, preko administracije, do podrške za više jezika i pismo.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold text-[var(--accent)]" data-lang="advConclusionTitle">Zaključak:</h3>
+      <p class="text-lg text-[var(--muted)]" data-lang="advConclusionText">Dok su generički AI asistenti dobri za opće informacije, JusticeFusion je jedini AI pravni asistent optimiziran za domaće zakonodavstvo, rad s vašim dokumentima i potpunu sigurnost podataka — savršeno rješenje za pravne profesionalce i organizacije koje žele više od običnog “AI chatbota”.</p>
+    </section>
+
+    <section id="contact-prednosti" class="container contact-form-section">
+      <h2 class="text-3xl font-semibold" data-lang="contactTitlePrednosti">Kontaktirajte nas</h2>
+      <form id="contact-form-prednosti" action="https://formsubmit.co/justicefusion@gmail.com" method="POST" class="mt-6 space-y-4">
+        <input type="hidden" name="_subject" value="Upit sa JusticeFusion - Prednosti stranice">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Vaše ime i prezime" required data-lang="contactNamePlaceholder">
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Vaš email" required data-lang="contactEmailPlaceholder">
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="4" placeholder="Vaša poruka" required data-lang="contactMessagePlaceholder"></textarea>
+        </div>
+        <button type="submit" class="btn w-full" data-lang="contactSendButton">Pošalji poruku</button>
+      </form>
+      <div class="video-wrapper mt-6">
+        <iframe src="https://www.youtube.com/embed/8Ykhc2iXFho" title="JusticeFusion demo video" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
