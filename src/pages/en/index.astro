@@ -1,7 +1,59 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const problems = [
+  { title: "Legal sources are fragmented", text: "Laws, regulations, court decisions, legal opinions, and internal policies are often spread across different systems and formats." },
+  { title: "Keywords are not enough", text: "The same legal issue can be phrased in multiple ways. A useful system needs to understand meaning, not just exact matching words." },
+  { title: "Documents must stay controlled", text: "Institutions and companies often cannot send sensitive material to public AI services without clear privacy and governance controls." },
+  { title: "Answers must be verifiable", text: "In legal work, fluent output alone is not enough. Teams need to see which sources support each answer." },
+];
 ---
-<BaseLayout lang="en" title="JusticeFusion — Legal AI assistant for local law and private documents" description="JusticeFusion is a legal AI assistant for searching laws, case law and private documents with RAG architecture, local legal corpora and secure deployment options." canonical="https://justicestart.cc/en/" altBs="https://justicestart.cc/" altEn="https://justicestart.cc/en/" active="home" switchHref="/" switchLabel="BS" contactId="contact">
-<section class="container hero"><div><h1>JusticeFusion — Legal AI assistant for local law and private documents</h1><p>Search laws, regulations, case law and internal documents in natural language.</p><div class="cta"><a class="btn" href="https://justicefusion.cc/" target="_blank" rel="noopener">Access assistant</a><a class="btn ghost" href="/en/whitepaper">Read whitepaper</a></div></div><img src="/images/hero-placeholder.png" alt="JusticeFusion product preview" width="560" height="420"/></section>
-<section class="container" id="contact"><h2>Request demo or more information</h2><form action="https://formsubmit.co/justicefusion@gmail.com" method="POST" class="contact"><input type="hidden" name="_captcha" value="false" /><input name="name" required placeholder="Full name"/><input name="email" type="email" required placeholder="Email"/><textarea name="message" required placeholder="Message"></textarea><button class="btn" type="submit">Send message</button></form></section>
+<BaseLayout lang="en" title="JusticeFusion — Legal AI assistant for local law and private documents" description="JusticeFusion is a legal AI assistant for searching legal databases, regulations, case law and private documents using RAG, hybrid retrieval, relationship graphs and private deployment." canonical="https://justicestart.cc/en/" altBs="https://justicestart.cc/" altEn="https://justicestart.cc/en/" active="home" switchHref="/" switchLabel="BS" contactId="contact">
+  <section class="container hero home-section">
+    <div>
+      <p class="eyebrow">Legal AI assistant for local law, regulations and private documents</p>
+      <h1>JusticeFusion turns legal databases and private documents into an intelligent legal research system.</h1>
+      <p class="lead">Ask questions in natural language, retrieve relevant articles, judgments and internal files, compare documents, and draft legal answers with clearer source grounding and stronger data control.</p>
+      <div class="cta"><a class="btn" href="https://justicefusion.cc/" target="_blank" rel="noopener">Access assistant</a><a class="btn ghost" href="/en/whitepaper">Read whitepaper</a></div>
+      <div class="badges"><span>Legal database + private files</span><span>RAG + relationship graph</span><span>On-premise / private cloud</span></div>
+    </div>
+    <div class="mockup"><img src="/images/hero-placeholder.png" alt="JusticeFusion product preview" width="560" height="420"/><div class="chip a">Query</div><div class="chip b">Relevant sources</div><div class="chip c">Concept graph</div><div class="chip d">Draft answer</div></div>
+  </section>
+
+  <section class="container home-section"><h2>Why traditional legal search is slow</h2><div class="grid cols-4">{problems.map((item) => <article><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></section>
+
+  <section class="container home-section tone"><h2>How JusticeFusion works</h2><div class="grid cols-4 steps"><article><p class="num">01</p><h3>Upload and process sources</h3><p>The system processes legal texts, PDF/DOCX files, scanned material, and internal documents.</p></article><article><p class="num">02</p><h3>Semantic and hybrid retrieval</h3><p>It combines embeddings, keywords, BM25/hybrid retrieval, and ranking to find relevant context.</p></article><article><p class="num">03</p><h3>Legal concept and relationship graph</h3><p>It links concepts, entities, regulations, and relationships so outputs include broader legal context.</p></article><article><p class="num">04</p><h3>Answer grounded in context</h3><p>It generates an answer, draft filing, or document analysis with source-aware grounding for expert review.</p></article></div></section>
+
+  <section class="container home-section"><h2>What JusticeFusion can do</h2><div class="grid cols-3"><article><h3>Ask questions across a legal database</h3><p>Search laws, regulations, case law, and other legal sources in natural language.</p></article><article><h3>Work with private documents</h3><p>Analyze contracts, rulings, policies, letters, PDF/DOCX files, and scanned documents.</p></article><article><h3>Combine public/legal sources with user files</h3><p>Answers can combine legal corpus content and user files, prioritizing user documents when relevant.</p></article><article><h3>Draft legal documents</h3><p>Assist with draft requests, legal letters, appeals, opinions, and other formal legal text.</p></article><article><h3>Explainable answers</h3><p>Provide relevant context excerpts, source references, and reasoning signals behind each answer.</p></article><article><h3>Private deployment</h3><p>Deploy on your own infrastructure or in a private cloud environment based on your requirements.</p></article></div></section>
+
+  <section class="container home-section tone"><h2>Built for</h2><div class="grid cols-4"><article><h3>Law firms</h3><p>Faster research across statutes, case law, and case files.</p></article><article><h3>Public institutions</h3><p>Search internal acts, rulebooks, correspondence, and legal obligations.</p></article><article><h3>Companies and legal departments</h3><p>Analyze contracts, internal procedures, and compliance materials.</p></article><article><h3>Legal database publishers</h3><p>Integrate an AI assistant on top of existing legal content libraries.</p></article></div></section>
+
+  <section class="container home-section compare"><h2>Why not just use generic ChatGPT?</h2><p>Generic AI can help with explanations, but JusticeFusion is designed to operate on concrete legal corpora, internal files, and controlled knowledge sources. The goal is not only text generation, but retrieval of relevant legal context, relationship-aware evidence, and verifiable outputs.</p><div class="badges"><span>Built for legal sources</span><span>Works over your files and legal corpus</span><span>Designed for private enterprise environments</span></div><a class="btn ghost" href="/en/advantages-over-chatgpt">See advantages over ChatGPT</a></section>
+
+  <section class="container home-section"><h2>Technology behind the system</h2><p class="lead small">JusticeFusion uses a RAG-based architecture with local or external LLMs, vector/hybrid retrieval, and a relationship graph layer. This helps shape answers from relevant sources instead of relying only on generic model memory.</p><div class="badges"><span>RAG</span><span>Embeddings</span><span>Hybrid search</span><span>Graph context</span><span>Document OCR</span><span>Local LLM / Ollama</span><span>Private cloud</span><span>On-premise</span></div></section>
+
+  <section class="container home-section final-cta" id="contact"><h2>Want to see JusticeFusion working on real legal documents?</h2><p>Request a demo or access the assistant and test how the system finds, connects and explains legal information.</p><div class="cta"><a class="btn" href="https://justicefusion.cc/" target="_blank" rel="noopener">Access assistant</a><a class="btn ghost" href="#contact-form">Contact us</a></div><form id="contact-form" action="https://formsubmit.co/justicefusion@gmail.com" method="POST" class="contact"><input type="hidden" name="_captcha" value="false" /><input name="name" required placeholder="Full name"/><input name="email" type="email" required placeholder="Email"/><textarea name="message" required placeholder="Message"></textarea><button class="btn" type="submit">Send message</button></form><p class="disclaimer">JusticeFusion is an assistant tool for legal research and drafting. Final review and legal interpretation should be performed by a qualified professional.</p></section>
 </BaseLayout>
+
+<style>
+  .home-section { padding: 2.8rem 1rem; }
+  .tone { background: rgba(18, 27, 45, 0.45); border: 1px solid var(--line); border-radius: 1rem; }
+  .eyebrow { color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; font-size: .78rem; }
+  .lead { color: var(--muted); max-width: 68ch; }
+  .small { max-width: 78ch; }
+  .mockup { position: relative; border-radius: 1rem; border: 1px solid #334155; padding: .7rem; background: radial-gradient(circle at top, rgba(139,0,0,.25), transparent 45%), #0b1220; box-shadow: 0 15px 45px rgba(0,0,0,.35); }
+  .mockup img { width: 100%; border-radius: .7rem; display: block; }
+  .chip { position: absolute; background: rgba(15,23,42,.9); border: 1px solid #475569; padding: .3rem .55rem; border-radius: 999px; font-size: .75rem; }
+  .a{ top:.8rem; left:.8rem; } .b{ top:.8rem; right:.8rem; } .c{ bottom:.8rem; left:.8rem; } .d{ bottom:.8rem; right:.8rem; }
+  .badges { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1rem; }
+  .badges span, .num { background: #16233a; border: 1px solid #334155; border-radius: 999px; padding: .35rem .65rem; font-size: .8rem; display:inline-block; }
+  .num { margin-bottom: .5rem; color: #fca5a5; }
+  .steps article { background: linear-gradient(180deg, rgba(18,27,45,.8), rgba(18,27,45,.45)); }
+  .compare p { max-width: 75ch; }
+  .cols-4 { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .cols-3 { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .final-cta { border: 1px solid var(--line); border-radius: 1rem; background: linear-gradient(180deg, rgba(139,0,0,.12), rgba(18,27,45,.65)); }
+  .disclaimer { margin-top: 1.2rem; font-size: .85rem; color: #cbd5e1; }
+  @media (max-width: 980px) { .cols-4, .cols-3 { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media (max-width: 700px) { .cols-4, .cols-3 { grid-template-columns: 1fr; } }
+</style>
