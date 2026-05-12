@@ -1,8 +1,134 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const problems = [
+  {
+    title: "Pravni izvori su rasuti",
+    text: "Zakoni, pravilnici, presude, mišljenja i interni akti često se nalaze u različitim sistemima i formatima.",
+  },
+  {
+    title: "Ključne riječi nisu dovoljne",
+    text: "Pravno pitanje se često može postaviti na više načina. Sistem mora razumjeti značenje, ne samo pronaći identične riječi.",
+  },
+  {
+    title: "Dokumenti moraju ostati pod kontrolom",
+    text: "Institucije i firme često ne mogu slati osjetljive dokumente u javne AI servise bez jasnih pravila privatnosti i kontrole.",
+  },
+  {
+    title: "Odgovor mora biti provjerljiv",
+    text: "U pravu nije dovoljno dobiti lijep odgovor. Važno je vidjeti na osnovu kojih izvora je odgovor pripremljen.",
+  },
+];
+
+const steps = [
+  {
+    title: "Učitavanje i obrada izvora",
+    text: "Sistem obrađuje pravne tekstove, PDF/DOCX dokumente, skenirane materijale i interne fajlove.",
+  },
+  {
+    title: "Semantičko i hibridno pretraživanje",
+    text: "Kombinuje embeddings, ključne riječi, BM25/hibridnu pretragu i rangiranje rezultata kako bi pronašao relevantan kontekst.",
+  },
+  {
+    title: "Graf pravnih pojmova i odnosa",
+    text: "Povezuje pojmove, subjekte, propise i odnose kako bi odgovor imao širi pravni kontekst, a ne samo izolovane odlomke.",
+  },
+  {
+    title: "Odgovor uz kontekst",
+    text: "Generiše odgovor, nacrt akta ili analizu dokumenta, uz naglasak na relevantne izvore i mogućnost stručne provjere.",
+  },
+];
+
+const features = [
+  ["Pitanja nad pravnom bazom", "Pretraga zakona, pravilnika, presuda i drugih pravnih izvora prirodnim jezikom."],
+  ["Rad s privatnim dokumentima", "Analiza ugovora, rješenja, internih akata, dopisa, PDF/DOCX fajlova i skeniranih dokumenata."],
+  ["Kombinovanje izvora", "Odgovor može uzeti u obzir i pravnu bazu i korisnički dokument, uz prioritet dokumentima korisnika kada su relevantni."],
+  ["Nacrti pravnih akata", "Pomoć u izradi nacrta zahtjeva, dopisa, žalbi, mišljenja i drugih formalnih tekstova."],
+  ["Objašnjenje odgovora", "Mogućnost prikaza relevantnih dijelova konteksta, izvora i razloga zbog kojih je odgovor formiran."],
+  ["Privatna implementacija", "Mogućnost pokretanja na vlastitoj infrastrukturi ili privatnom cloudu, zavisno od potreba korisnika."],
+];
 ---
-<BaseLayout title="JusticeFusion — AI pravni asistent za domaće pravo i vaše dokumente" description="JusticeFusion je AI pravni asistent za pretragu zakona, presuda i privatnih dokumenata uz RAG arhitekturu, lokalne pravne baze i sigurnu deployment opciju." canonical="https://justicestart.cc/" altBs="https://justicestart.cc/" altEn="https://justicestart.cc/en/" active="home" switchHref="/en/" switchLabel="EN" contactId="contact">
-<section class="container hero"><div><h1>JusticeFusion — AI pravni asistent za domaće pravo i vaše dokumente</h1><p>Pretražujte zakone, propise, presude i interne dokumente prirodnim jezikom.</p><div class="cta"><a class="btn" href="https://justicefusion.cc/" target="_blank" rel="noopener">Pristup asistentu</a><a class="btn ghost" href="/whitepaper">Pročitaj whitepaper</a></div></div><img src="/images/hero-placeholder.png" alt="Prikaz JusticeFusion asistenta" width="560" height="420"/></section>
-<section class="container cards"><h2>Šta JusticeFusion rješava?</h2><div class="grid"> <article><h3>Pretraga velikih dokumenata</h3><p>Postavite pitanje o ugovorima, rješenjima, presudama ili internim aktima.</p></article><article><h3>Pravna baza + vaši dokumenti</h3><p>Sistem kombinuje pravne izvore i vaše dokumente.</p></article><article><h3>Nacrti pravnih akata</h3><p>Pomaže u pripremi nacrta spremnih za stručnu provjeru.</p></article><article><h3>Privatnost i kontrola</h3><p>Podržan on-premise ili privatni cloud deployment.</p></article></div></section>
-<section class="container" id="contact"><h2>Želite demo ili više informacija?</h2><p>Pošaljite poruku putem postojećeg obrasca.</p><form action="https://formsubmit.co/justicefusion@gmail.com" method="POST" class="contact"><input type="hidden" name="_captcha" value="false" /><input name="name" required placeholder="Vaše ime i prezime"/><input name="email" type="email" required placeholder="Vaš email"/><textarea name="message" required placeholder="Vaša poruka"></textarea><button class="btn" type="submit">Kontaktirajte nas</button></form></section>
+<BaseLayout title="JusticeFusion — AI pravni asistent za domaće pravo i vaše dokumente" description="JusticeFusion je AI pravni asistent za pretragu pravnih baza, propisa, presuda i privatnih dokumenata uz RAG, hibridnu pretragu, graf odnosa i privatnu implementaciju." canonical="https://justicestart.cc/" altBs="https://justicestart.cc/" altEn="https://justicestart.cc/en/" active="home" switchHref="/en/" switchLabel="EN" contactId="contact">
+  <section class="container hero home-section">
+    <div>
+      <p class="eyebrow">AI pravni asistent za domaće pravo, propise i interne dokumente</p>
+      <h1>JusticeFusion pretvara pravne baze i vaše dokumente u pametno pretraživ pravni sistem.</h1>
+      <p class="lead">Postavljajte pitanja prirodnim jezikom, pronađite relevantne članove, presude i interne akte, uporedite dokumente i dobijte nacrte odgovora uz jasniji trag izvora i bolju kontrolu nad podacima.</p>
+      <div class="cta">
+        <a class="btn" href="https://justicefusion.cc/" target="_blank" rel="noopener">Pristup asistentu</a>
+        <a class="btn ghost" href="/whitepaper">Pročitaj whitepaper</a>
+      </div>
+      <div class="badges">
+        <span>Pravna baza + privatni dokumenti</span><span>RAG + graf relacija</span><span>On-premise / privatni cloud</span>
+      </div>
+    </div>
+    <div class="mockup">
+      <img src="/images/hero-placeholder.png" alt="Prikaz JusticeFusion asistenta" width="560" height="420"/>
+      <div class="chip a">Upit</div><div class="chip b">Relevantni izvori</div><div class="chip c">Graf pojmova</div><div class="chip d">Nacrt odgovora</div>
+    </div>
+  </section>
+
+  <section class="container home-section">
+    <h2>Zašto je klasična pravna pretraga spora?</h2>
+    <div class="grid cols-4">{problems.map((item) => <article><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+  </section>
+
+  <section class="container home-section tone">
+    <h2>Kako JusticeFusion radi</h2>
+    <div class="grid cols-4 steps">{steps.map((item, i) => <article><p class="num">0{i + 1}</p><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+  </section>
+
+  <section class="container home-section">
+    <h2>Šta JusticeFusion može</h2>
+    <div class="grid cols-3">{features.map(([title, text]) => <article><h3>{title}</h3><p>{text}</p></article>)}</div>
+  </section>
+
+  <section class="container home-section tone">
+    <h2>Za koga je namijenjen</h2>
+    <div class="grid cols-4"><article><h3>Advokatske kancelarije</h3><p>Brže istraživanje propisa, sudske prakse i predmeta.</p></article><article><h3>Javne institucije</h3><p>Pretraga internih akata, pravilnika, dopisa i zakonskih obaveza.</p></article><article><h3>Kompanije i pravni odjeli</h3><p>Analiza ugovora, internih procedura i usklađenosti.</p></article><article><h3>Izdavači pravnih baza</h3><p>Mogućnost integracije AI asistenta nad postojećim pravnim sadržajem.</p></article></div>
+  </section>
+
+  <section class="container home-section compare">
+    <h2>Zašto ne samo generički ChatGPT?</h2>
+    <p>Generički AI modeli mogu pomoći u objašnjenjima, ali JusticeFusion je zamišljen kao sistem koji radi nad konkretnom pravnom bazom, internim dokumentima i kontrolisanim izvorima. Cilj nije samo generisati tekst, nego pronaći relevantan pravni kontekst, povezati izvore i omogućiti provjeru odgovora.</p>
+    <div class="badges"><span>Specijalizovan za pravne izvore</span><span>Radi nad vašim dokumentima i bazom</span><span>Predviđen za privatno/enterprise okruženje</span></div>
+    <a class="btn ghost" href="/prednosti">Pogledaj prednosti u odnosu na ChatGPT</a>
+  </section>
+
+  <section class="container home-section">
+    <h2>Tehnologija iza sistema</h2>
+    <p class="lead small">JusticeFusion koristi pristup zasnovan na RAG arhitekturi, lokalnim ili eksternim LLM modelima, vektorskoj/hibridnoj pretrazi i grafu odnosa. Takav pristup omogućava da se odgovor formira iz relevantnih izvora, a ne samo iz opšteg znanja modela.</p>
+    <div class="badges"><span>RAG</span><span>Embeddings</span><span>Hybrid search</span><span>Graph context</span><span>Document OCR</span><span>Local LLM / Ollama</span><span>Private cloud</span><span>On-premise</span></div>
+  </section>
+
+  <section class="container home-section final-cta" id="contact">
+    <h2>Želite vidjeti kako JusticeFusion radi na stvarnim pravnim dokumentima?</h2>
+    <p>Pošaljite upit za demo ili pristup asistentu i testirajte kako sistem pronalazi, povezuje i objašnjava pravne informacije.</p>
+    <div class="cta"><a class="btn" href="https://justicefusion.cc/" target="_blank" rel="noopener">Pristup asistentu</a><a class="btn ghost" href="#contact-form">Kontaktirajte nas</a></div>
+    <form id="contact-form" action="https://formsubmit.co/justicefusion@gmail.com" method="POST" class="contact"><input type="hidden" name="_captcha" value="false" /><input name="name" required placeholder="Vaše ime i prezime"/><input name="email" type="email" required placeholder="Vaš email"/><textarea name="message" required placeholder="Vaša poruka"></textarea><button class="btn" type="submit">Pošaljite poruku</button></form>
+    <p class="disclaimer">JusticeFusion je pomoćni alat za pravno istraživanje i pripremu nacrta. Konačnu provjeru i pravno tumačenje treba izvršiti kvalifikovana osoba.</p>
+  </section>
 </BaseLayout>
+
+<style>
+  .home-section { padding: 2.8rem 1rem; }
+  .tone { background: rgba(18, 27, 45, 0.45); border: 1px solid var(--line); border-radius: 1rem; }
+  .eyebrow { color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; font-size: .78rem; }
+  .lead { color: var(--muted); max-width: 68ch; }
+  .small { max-width: 78ch; }
+  .mockup { position: relative; border-radius: 1rem; border: 1px solid #334155; padding: .7rem; background: radial-gradient(circle at top, rgba(139,0,0,.25), transparent 45%), #0b1220; box-shadow: 0 15px 45px rgba(0,0,0,.35); }
+  .mockup img { width: 100%; border-radius: .7rem; display: block; }
+  .chip { position: absolute; background: rgba(15,23,42,.9); border: 1px solid #475569; padding: .3rem .55rem; border-radius: 999px; font-size: .75rem; }
+  .a{ top:.8rem; left:.8rem; } .b{ top:.8rem; right:.8rem; } .c{ bottom:.8rem; left:.8rem; } .d{ bottom:.8rem; right:.8rem; }
+  .badges { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1rem; }
+  .badges span, .num { background: #16233a; border: 1px solid #334155; border-radius: 999px; padding: .35rem .65rem; font-size: .8rem; display:inline-block; }
+  .num { margin-bottom: .5rem; color: #fca5a5; }
+  .steps article { background: linear-gradient(180deg, rgba(18,27,45,.8), rgba(18,27,45,.45)); }
+  .compare p { max-width: 75ch; }
+  .cols-4 { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .cols-3 { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .final-cta { border: 1px solid var(--line); border-radius: 1rem; background: linear-gradient(180deg, rgba(139,0,0,.12), rgba(18,27,45,.65)); }
+  .disclaimer { margin-top: 1.2rem; font-size: .85rem; color: #cbd5e1; }
+  @media (max-width: 980px) { .cols-4, .cols-3 { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media (max-width: 700px) { .cols-4, .cols-3 { grid-template-columns: 1fr; } }
+</style>
