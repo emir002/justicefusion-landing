@@ -1,4 +1,7 @@
-/prednosti   /prednosti.html 301
-/prednosti/  /prednosti.html 301
-/whitepaper  /whitepaper.html 301
-/whitepaper/ /whitepaper.html 301
+/index.html / 301
+/whitepaper.html /whitepaper 301
+/prednosti.html /prednosti 301
+/en/index.html /en/ 301
+/en/whitepaper.html /en/whitepaper 301
+/en/advantages.html /en/advantages-over-chatgpt 301
+/en/advantages-over-chatgpt.html /en/advantages-over-chatgpt 301
