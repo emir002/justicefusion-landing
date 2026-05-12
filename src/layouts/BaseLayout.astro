@@ -3,21 +3,45 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const { title = "JusticeFusion" } = Astro.props;
+const {
+  title,
+  description,
+  lang = "bs",
+  canonical,
+  altBs,
+  altEn,
+  active = "home",
+  contactId = "contact",
+  switchHref = "/en/",
+  switchLabel = "EN",
+  ogImage = "/images/hero-placeholder.png"
+} = Astro.props;
 ---
 <!doctype html>
-<html lang="bs">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="bs" href={altBs} />
+    <link rel="alternate" hreflang="en" href={altEn} />
+    <link rel="alternate" hreflang="x-default" href={altBs} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`https://justicestart.cc${ogImage}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`https://justicestart.cc${ogImage}`} />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
   </head>
   <body>
-    <Header />
-    <slot />
-    <Footer />
-    <script src="/script.js" defer></script>
+    <Header lang={lang} active={active} contactId={contactId} switchHref={switchHref} switchLabel={switchLabel} />
+    <main><slot /></main>
+    <Footer lang={lang} switchHref={switchHref} switchLabel={switchLabel} contactId={contactId} />
   </body>
 </html>

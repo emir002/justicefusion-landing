@@ -1,6 +1,17 @@
-<footer class="mt-12 border-t border-white/40 bg-neutral-900 py-6 text-neutral-200">
-  <div class="container flex flex-col items-center gap-2 text-center">
-    <img src="/images/graphlab_logo.png" alt="GraphLab logo" class="footer-logo">
-    <p data-lang="footerText">© 2025 GraphLab. Sva prava zadržana.</p>
+---
+const { lang = "bs", contactId = "contact", switchHref = "/en/", switchLabel = "EN" } = Astro.props;
+const bs = lang === "bs";
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <img src="/images/graphlab_logo.png" alt="GraphLab logo" class="footer-logo" width="120" height="40" loading="lazy"/>
+    <p>© 2026 GraphLab</p>
+    <nav aria-label="Footer links" class="footer-links">
+      <a href={bs ? "/" : "/en/"}>{bs ? "Početna" : "Home"}</a>
+      <a href={bs ? "/whitepaper" : "/en/whitepaper"}>Whitepaper</a>
+      <a href={bs ? "/prednosti" : "/en/advantages-over-chatgpt"}>{bs ? "Prednosti" : "Advantages"}</a>
+      <a href={`#${contactId}`}>{bs ? "Kontakt" : "Contact"}</a>
+      <a href={switchHref}>{switchLabel}</a>
+    </nav>
   </div>
 </footer>

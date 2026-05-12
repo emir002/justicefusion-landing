@@ -1,22 +1,32 @@
-<header class="sticky top-0 z-50 border-b border-white/40 bg-white/80 backdrop-blur">
-  <nav class="container flex items-center justify-between py-4 relative">
-    <a href="index.html" class="logo">
-      <img src="/images/justicefusion_logo.png" alt="JusticeFusion logo" class="logo-img">
-      JusticeFusion
-    </a>
-    <div class="nav-icons flex items-center gap-3">
-      <span id="lang-bs" class="flag active">🇧🇦</span>
-      <span id="lang-en" class="flag">🇬🇧</span>
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="#architecture-start" data-lang="navArchitecture-start">Arhitektura JusticeFusion</a></li>
-      <li><a href="whitepaper.html" data-lang="navWhitepaper">Whitepaper</a></li>
-      <li><a href="#contact" data-lang="navContactHome">Kontakt</a></li>
-      <li><a href="prednosti.html" data-lang="navAdvantages">Prednosti u odnosu na ChatGPT</a></li>
-      <li><a href="https://justicefusion.cc" target="_blank" class="access-link" data-lang="navAccess">Pristup asistentu</a></li>
+---
+const { lang = "bs", active = "home", contactId = "contact", switchHref = "/en/", switchLabel = "EN" } = Astro.props;
+const bs = lang === "bs";
+const items = bs
+  ? [
+      { key: "home", href: "/", label: "Početna" },
+      { key: "whitepaper", href: "/whitepaper", label: "Whitepaper" },
+      { key: "advantages", href: "/prednosti", label: "Prednosti" },
+      { key: "contact", href: `#${contactId}`, label: "Kontakt" }
+    ]
+  : [
+      { key: "home", href: "/en/", label: "Home" },
+      { key: "whitepaper", href: "/en/whitepaper", label: "Whitepaper" },
+      { key: "advantages", href: "/en/advantages-over-chatgpt", label: "Advantages" },
+      { key: "contact", href: `#${contactId}`, label: "Contact" }
+    ];
+---
+<header class="site-header">
+  <nav class="container nav-wrap" aria-label="Main navigation">
+    <a href={bs ? "/" : "/en/"} class="logo"><img src="/images/justicefusion_logo.png" alt="JusticeFusion logo" width="42" height="42"/>JusticeFusion</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="main-menu">☰</button>
+    <ul id="main-menu" class="nav-menu">
+      {items.map((item) => <li><a class={active===item.key?"active":""} href={item.href}>{item.label}</a></li>)}
+      <li><a class="switch" href={switchHref}>{switchLabel}</a></li>
+      <li><a class="access-link" href="https://justicefusion.cc/" target="_blank" rel="noopener">{bs ? "Pristup asistentu" : "Access assistant"}</a></li>
     </ul>
   </nav>
 </header>
+<script is:inline>
+  const b=document.querySelector('.menu-btn');const m=document.querySelector('#main-menu');
+  b?.addEventListener('click',()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
+</script>
